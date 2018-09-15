@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2018 Ronnie Ayala
+Copyright (c) 2018 Devmente S.A.C.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
