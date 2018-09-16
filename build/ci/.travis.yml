@@ -1,4 +1,4 @@
-sudo: false
+sudo: required
 
 language: go
 
@@ -20,8 +20,10 @@ before_script:
   - go install ./vendor/github.com/golangci/golangci-lint/cmd/golangci-lint
 
 script:
-  - golangci-lint run
-  - go test -race -coverprofile=coverage.txt -covermode=atomic
+  - golangci-lint run ./...
+  - go test -race ./... -coverprofile=coverage.txt -covermode=atomic
+  - go build -o build/package/go-sidecar cmd/go-sidecar/main.go
+  - docker build build/package/
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
